@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richard & Atomic Company</title>
+    <link rel="stylesheet" href="STYLE/styles.css">
+</head>
+<body>
+    <div class="header">
+        <img src="IMG/richardatomiccompany.png" alt="Company Logo" class="logo">
+        <h1>Richard & Atomic Company</h1>
+    </div>
+
+    <div class="video-feed">
+        <h2>Live Stream</h2>
+        <img id="videoStream" src="http://x.x.x.x/stream" alt="ESP32-CAM Stream">
+    </div>
+
+    <div class="controls">
+        <div class="control-section">
+            <button id="btnW" onclick="controlMotor('motor', 1)">W</button>
+            <div class="control-buttons">
+                <button id="btnA" onclick="controlServo('servodirection', -1)">A</button>
+                <button id="btnS" onclick="controlMotor('motor', -1)">S</button>
+                <button id="btnD" onclick="controlServo('servodirection', 1)">D</button>
+            </div>
+        </div>
+
+        <div class="servo-controls">
+            <div class="left-column">
+                <button id="leftAxis" onclick="controlServo('servoaxis', -1)">Turn left axis</button>
+                <button id="tiltDown" onclick="controlServo('servolift', -1)">Tilt down grip</button>
+                <button id="closeGrip" onclick="controlServo('servogrip', -1)">Close grip</button>
+            </div>
+            <div class="right-column">
+                <button id="rightAxis" onclick="controlServo('servoaxis', 1)">Turn right axis</button>
+                <button id="tiltUp" onclick="controlServo('servolift', 1)">Tilt up grip</button>
+                <button id="openGrip" onclick="controlServo('servogrip', 1)">Open grip</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="status">
+        <p>Temperature: <span id="temperature"></span></p>
+        <p>Humidity: <span id="humidity"></span></p>
+    </div>
+
+    <script src="JS/script.js"></script>
+</body>
+</html>
